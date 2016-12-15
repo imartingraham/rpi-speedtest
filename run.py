@@ -12,7 +12,7 @@ result, err = subprocess.Popen(["speedtest-cli", "--json"], stdout=subprocess.PI
 
 if(not err):
   # result will be a list with one item in it. 
-  data = json.loads(result)
+  data = json.loads(result.decode('utf-8'))
   # send data to ifttt
   pyfttt.send_event(
     api_key=os.environ.get('IFTTT_KEY'),
