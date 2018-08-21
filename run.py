@@ -20,7 +20,7 @@ if(not err):
     'date': str(datetime.datetime.utcnow()),
     'wifi_name': wifi_name.rstrip('\n'),
     'location': data['server']['name'],
-    'upload': data['upload'],
-    'download': data['download']
+    'upload': data['upload']/1000000, # convert to megabits
+    'download': data['download']/1000000
   }
   r = requests.post(os.environ.get('ZAPIER_ENDPOINT'), data=zapier_data)
