@@ -18,7 +18,7 @@ if(not err):
   data = json.loads(result.decode('utf-8'))
   zapier_data = {
     'date': str(datetime.datetime.utcnow()),
-    'wifi_name': wifi_name,
+    'wifi_name': wifi_name.rstrip('\n'),
     'location': data['server']['name'],
     'upload': data['upload'],
     'download': data['download']
