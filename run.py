@@ -17,7 +17,7 @@ if(not err):
   pyfttt.send_event(
     api_key=os.environ.get('IFTTT_KEY'),
     event=os.environ.get('IFTTT_EVENT_NAME'),
-    value1=data['download'],
-    value2=data['upload'],
+    value1=data['download']/1000000,
+    value2=data['upload']/1000000,
     value3=data['server']['name'] # This is the location of where the test was taken
   )
